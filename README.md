@@ -1,7 +1,7 @@
 ### Welcome to the complete DSA guide by Mihraz Hossain (for batch 2023)
-If you can finish this, I would like to congratulate you cause you are ready to take the exam!
+If you can finish this, I would like to congratulate you cause you will be ready to take the exam!
 
-SO Best wishes, we will be **starting with:**
+SO Best wishes and we will be **starting with:**
 
 # 📘 LECTURE 2 — Math Foundations (Sets, Relations, Recursion)
 
@@ -2242,6 +2242,6 @@ int main(){
 **One-paragraph exam explanation:**
 Kruskal sorts edges by weight, then scans from smallest to largest, adding an edge only if it connects two different components (checked using DSU). Stop after `V-1` edges. Time: sorting `O(E log E)`.
 
-### What? Oh I see, you must a Seeker from Quidditch but I dont have nothing much to offer you.
+### What? Oh I see, you must be a Seeker from Quidditch but unfortunately I dont have nothing more to offer you.
 
 Anyways, many many **Congratulations**, you are good to go!
