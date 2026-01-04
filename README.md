@@ -1074,9 +1074,7 @@ Answer in your head:
 * Which traversal uses queue? → Level order
 * Height of skewed tree with n nodes? → n
 
-If you got these → excellent.
-
-Excellent — **Lecture 8 (Sorting)** is one of the **most important lectures for your exam**, especially because:
+**Lecture 8 (Sorting)** is one of the **most important lectures for your exam**, especially because:
 
 * Sorting appears in **HWs**
 * Sorting appears in **projects**
@@ -1700,7 +1698,7 @@ Answer in your head:
 * Data in B+ tree stored where? → Leaf nodes
 
 
-Excellent — **Lecture 11 (Graphs)** is big, but don’t worry:
+**Lecture 11 (Graphs)** is big, but don’t worry:
 **exam questions are very structured and predictable**. If you know the definitions + algorithms in words, you score well.
 
 
