@@ -1700,167 +1700,275 @@ Answer in your head:
 * Data in B+ tree stored where? → Leaf nodes
 
 
-# 📘 LECTURE 10 — Indexing & Advanced Trees
+Excellent — **Lecture 11 (Graphs)** is big, but don’t worry:
+**exam questions are very structured and predictable**. If you know the definitions + algorithms in words, you score well.
+
+
+
+# 🕸️ LECTURE 11 — GRAPHS
 
 👉 **Big idea**
-Hashing is fast, but limited.
-Indexing and advanced trees solve **searching large data efficiently**, especially on disk.
+Graphs are used to model **relationships**: networks, maps, dependencies.
 
 
 
-## 1️⃣ Why Hashing is NOT Enough (EXAM FAVORITE)
-
-Even though hashing is fast (**O(1)** average), it has **limitations**.
-
-### Limitations of Hashing:
-
-1. ❌ Cannot handle **range queries**
-
-   * Example: find students with marks between 70–80
-2. ❌ Cannot easily find **minimum / maximum**
-3. ❌ No sorted order
-4. ❌ Performance depends on hash function
-
-👉 **Exam sentence**:
-
-> Hashing supports only exact-match queries and does not preserve order.
-
-
-
-## 2️⃣ What is Indexing? ⭐⭐⭐
+## 1️⃣ What is a Graph?
 
 ### Definition (EXAM SENTENCE)
 
-> An index is a data structure that improves the speed of data retrieval operations on large datasets.
+> A graph is a data structure consisting of a set of **vertices (nodes)** and a set of **edges** connecting pairs of vertices.
 
-Think of:
+Written as:
 
-* **Book index**
-* **Database index**
+```
+G = (V, E)
+```
 
-
-
-## 3️⃣ What Operations Does an Index Support?
-
-| Operation    | Time      |
-| - | - |
-| Insert       | O(log n)  |
-| Delete       | O(log n)  |
-| Exact search | O(log n)  |
-| Range search | Efficient |
-| Min / Max    | O(log n)  |
-
-👉 Indexing is **better than hashing** for many applications.
+* V = vertices
+* E = edges
 
 
 
-## 4️⃣ Linear Index
+## 2️⃣ Types of Graphs ⭐⭐⭐
+
+### 1. Undirected Graph
+
+* Edge has **no direction**
+* Example: Facebook friends
+
+```
+A — B
+```
+
+
+
+### 2. Directed Graph (Digraph)
+
+* Edge has **direction**
+* Example: One-way roads
+
+```
+A → B
+```
+
+
+
+### 3. Weighted Graph
+
+* Each edge has a **weight** (cost, distance)
+
+
+
+### 4. Unweighted Graph
+
+* All edges equal
+
+👉 **Exam question**:
+“Differentiate directed and undirected graphs.”
+
+
+
+## 3️⃣ Graph Terminology (MEMORIZE)
+
+| Term            | Meaning                          |
+| - | -- |
+| Vertex          | Node                             |
+| Edge            | Connection                       |
+| Degree          | Number of edges                  |
+| Path            | Sequence of vertices             |
+| Cycle           | Path that starts & ends same     |
+| Connected graph | Path exists between all vertices |
+| DAG             | Directed Acyclic Graph           |
+
+
+
+## 4️⃣ Graph Representations ⭐⭐⭐ (VERY IMPORTANT)
+
+### 1. Adjacency Matrix
+
+* 2D array `n × n`
+* `1` means edge exists
+
+#### Pros:
+
+* Easy to check edge
+* Simple
+
+#### Cons:
+
+* Uses **O(n²)** memory
+
+
+
+### 2. Adjacency List ⭐⭐⭐
+
+* Each vertex has list of neighbors
+
+#### Pros:
+
+* Memory efficient
+* Good for sparse graphs
+
+#### Cons:
+
+* Edge check slower
+
+👉 **Exam question**:
+“Compare adjacency matrix and adjacency list.”
+
+
+
+## 5️⃣ Graph Traversals ⭐⭐⭐⭐⭐ (VERY IMPORTANT)
+
+Traversal = visiting all vertices.
+
+
+
+## A️⃣ Breadth-First Search (BFS)
 
 ### Idea:
 
-* Sorted list of keys
-* Each key points to data location
+* Visit **level by level**
+* Uses **Queue**
 
-### Problem:
+### Steps:
 
-* Index becomes **too large**
-* Slow disk access
+1. Start at source
+2. Mark visited
+3. Enqueue neighbors
 
+### Time:
 
+* **O(V + E)**
 
-## 5️⃣ Why Not Use a Simple BST? ⭐⭐⭐
+👉 Used in:
 
-### Problems with BST:
-
-1. May become **unbalanced**
-2. Height can be **O(n)**
-3. Too many disk accesses
-
-👉 Disk access is **VERY slow** → we want **short trees**
+* Shortest path (unweighted)
+* Level order traversal
 
 
 
-## 6️⃣ B-Trees ⭐⭐⭐ (IMPORTANT)
+## B️⃣ Depth-First Search (DFS)
 
-### What is a B-tree?
+### Idea:
 
-> A B-tree is a **height-balanced multi-way tree** designed for disk storage.
+* Go **deep first**
+* Uses **stack or recursion**
+
+### Steps:
+
+1. Visit node
+2. Recurse on neighbors
+
+### Time:
+
+* **O(V + E)**
+
+👉 Used in:
+
+* Cycle detection
+* Connectivity
+
+## 6️⃣ Topological Sort ⭐⭐⭐
+
+### Definition:
+
+> A linear ordering of vertices such that for every directed edge `u → v`, `u` appears before `v`.
+
+⚠️ Only works on **DAG**
+
+👉 Example:
+Course prerequisite ordering
+
+
+## 7️⃣ Shortest Path — Dijkstra’s Algorithm ⭐⭐⭐
+
+### Used when:
+
+* Graph is **weighted**
+* No negative weights
+
+### Idea:
+
+* Greedy
+* Always pick nearest unvisited node
+
+### Time:
+
+* O(V²) (simple)
+* O(E log V) (with heap)
+
+👉 **Exam requirement**:
+Explain steps, not code.
+
+
+## 8️⃣ Minimum Spanning Tree (MST) ⭐⭐⭐
+
+### Definition:
+
+> A tree that connects all vertices with **minimum total edge weight**.
 
 
 
-### Key Properties (MEMORIZE):
+### A️⃣ Prim’s Algorithm
 
-* Always **balanced**
-* All leaves at **same level**
-* Each node can have **many children**
-* Keys inside node are **sorted**
-
-Example:
-
-* Order `m`
-* Each node has between `⌈m/2⌉` and `m` children
+* Greedy
+* Start from a vertex
+* Add smallest edge
 
 
 
-## 7️⃣ Why B-Trees Are Used in Databases?
+### B️⃣ Kruskal’s Algorithm ⭐⭐⭐ (PROJECT 3)
 
-* Very **short height**
-* Fewer disk accesses
-* Efficient for large datasets
+Steps:
+
+1. Sort edges by weight
+2. Add edge if it doesn’t form cycle
+3. Use union-find concept
 
 👉 **Exam sentence**:
 
-> B-trees reduce disk access by storing multiple keys in a single node.
+> Kruskal’s algorithm builds MST by selecting edges in increasing order of weight.
 
 
 
-## 8️⃣ B+ Trees (Mention Only)
+## 9️⃣ Comparison Table (EXAM FAVORITE)
 
-Difference from B-tree:
-
-* Data stored only in **leaf nodes**
-* Internal nodes store keys only
-* Leaves linked for range queries
-
-📌 You usually just **explain idea**, not details.
-
-
-
-## 9️⃣ Advanced Trees (Know Names + Purpose)
-
-You don’t code these — just **recognize** them.
-
-| Tree           | Purpose                       |
-| -- | -- |
-| AVL Tree       | Self-balancing BST            |
-| Red-Black Tree | Balanced, faster inserts      |
-| Splay Tree     | Recently used nodes near root |
-| Trie           | String searching              |
-| KD-tree        | Multidimensional data         |
-
-👉 **Exam question**:
-“Name some balanced trees and their use.”
+| Algorithm | Used for                                  |
+| - | -- |
+| BFS       | Level traversal, unweighted shortest path |
+| DFS       | Depth traversal, cycle detection          |
+| Dijkstra  | Shortest path (weighted)                  |
+| Prim      | MST                                       |
+| Kruskal   | MST                                       |
 
 
 
 ## 📝 EXAM-STYLE QUESTIONS
 
-1. Why hashing is not suitable for range queries?
-2. What is indexing?
-3. Why BST is not ideal for disk-based data?
-4. What is a B-tree and why it is used?
-5. Difference between B-tree and B+ tree.
+1. Define graph.
+2. Difference between BFS and DFS.
+3. What is DAG?
+4. Explain topological sort.
+5. Explain Kruskal’s algorithm.
+6. Compare adjacency matrix and list.
 
 
 
 ## ✅ QUICK SELF-CHECK
 
-Answer in your head:
+Answer mentally:
 
-* Hashing supports range queries? → NO
-* B-tree height? → Always balanced
-* Why multi-way tree? → Fewer disk access
-* Data in B+ tree stored where? → Leaf nodes
+* BFS uses what? → Queue
+* DFS uses what? → Stack/Recursion
+* MST algorithms? → Prim, Kruskal
+* Topological sort applies to? → DAG
+
+👉 **Lecture 12 — Algorithm Design Techniques**
+
+This lecture is **explicitly referenced by Lecture 13**, so it’s CRITICAL.
+
+Say **“Continue with Lecture 12”** and we finish the teaching phase.
 
 
 # 🧠 LECTURE 12 — ALGORITHM DESIGN TECHNIQUES
