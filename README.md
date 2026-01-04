@@ -1822,7 +1822,7 @@ Traversal = visiting all vertices.
 
 
 
-## A️⃣ Breadth-First Search (BFS)
+## A️. Breadth-First Search (BFS)
 
 ### Idea:
 
@@ -1846,7 +1846,7 @@ Traversal = visiting all vertices.
 
 
 
-## B️⃣ Depth-First Search (DFS)
+## B️. Depth-First Search (DFS)
 
 ### Idea:
 
@@ -1908,7 +1908,7 @@ Explain steps, not code.
 
 
 
-### A️⃣ Prim’s Algorithm
+### A️. Prim’s Algorithm
 
 * Greedy
 * Start from a vertex
@@ -1916,7 +1916,7 @@ Explain steps, not code.
 
 
 
-### B️⃣ Kruskal’s Algorithm ⭐⭐⭐ (PROJECT 3)
+### B️. Kruskal’s Algorithm ⭐⭐⭐ (PROJECT 3)
 
 Steps:
 
