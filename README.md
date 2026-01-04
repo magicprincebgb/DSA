@@ -66,7 +66,7 @@ Let:
 * `A = {1,2}`
 
 | Statement | True/False |
-|  | - |
+| - | - |
 | `1 ∈ A`   | ✅          |
 | `{1} ⊆ A` | ✅          |
 | `1 ⊆ A`   | ❌          |
@@ -245,7 +245,7 @@ It tells us the **worst-case growth rate**.
 ## 4️⃣ Growth rates (MEMORIZE THIS TABLE)
 
 | Name         | Complexity |
-|  | - |
+| - | - |
 | Constant     | O(1)       |
 | Logarithmic  | O(log n)   |
 | Linear       | O(n)       |
@@ -658,7 +658,7 @@ Stacks and Queues are **restricted lists** — fewer operations, easier logic, v
 ## 2️⃣ Stack Operations (MEMORIZE)
 
 | Operation  | Meaning         |
-| - |  |
+| - | - |
 | PUSH       | Insert element  |
 | POP        | Remove element  |
 | TOP / PEEK | See top element |
@@ -744,7 +744,7 @@ Algorithm (memorize):
 ## 6️⃣ Queue Operations
 
 | Operation | Meaning       |
-|  | - |
+| - | - |
 | Enqueue   | Insert        |
 | Dequeue   | Remove        |
 | Front     | First element |
@@ -805,7 +805,7 @@ Dequeue → 10
 ## 🔢 Time Complexity (Easy Marks)
 
 | Operation | Stack | Queue |
-|  | -- | -- |
+| - | -- | -- |
 | Insert    | O(1)  | O(1)  |
 | Delete    | O(1)  | O(1)  |
 
@@ -864,7 +864,7 @@ Trees are used when we want **fast searching + structured data** (better than li
 ## 2️⃣ Tree Terminology ⭐⭐⭐ (MEMORIZE)
 
 | Term          | Meaning                  |
-| - |  |
+| - | - |
 | Node          | Data element             |
 | Edge          | Connection between nodes |
 | Root          | Top node                 |
@@ -992,7 +992,7 @@ Left → Right → Root
 ```
 
 | Traversal   | Result    |
-| -- |  |
+| -- | -- |
 | Preorder    | A B D E C |
 | Inorder     | D B E A C |
 | Postorder   | D E B C A |
@@ -1031,7 +1031,7 @@ Left → Right → Root
 ## 9️⃣ Relationship Between Height & Performance ⭐⭐⭐
 
 | Tree shape | Height | Performance |
-| - |  | -- |
+| - | - | -- |
 | Balanced   | log n  | Fast        |
 | Skewed     | n      | Slow        |
 
@@ -1241,7 +1241,7 @@ Steps:
 ## 5️⃣ Comparison Table (MEMORIZE THIS)
 
 | Algorithm | Best       | Avg        | Worst      | Stable |
-|  | - | - | - |  |
+| - | - | - | - | - |
 | Insertion | O(n)       | O(n²)      | O(n²)      | ✔      |
 | Bubble    | O(n²)      | O(n²)      | O(n²)      | ✔      |
 | Selection | O(n²)      | O(n²)      | O(n²)      | ❌      |
@@ -1394,7 +1394,7 @@ while low <= high:
 ## 4️⃣ Comparing Linear vs Binary Search ⭐⭐⭐
 
 | Feature         | Linear     | Binary           |
-|  | - | - |
+| - | - | - |
 | Sorted required | ❌          | ✔                |
 | Time            | O(n)       | O(log n)         |
 | Method          | Sequential | Divide & conquer |
@@ -1580,7 +1580,7 @@ Think of:
 ## 3️⃣ What Operations Does an Index Support?
 
 | Operation    | Time      |
-|  |  |
+| - | - |
 | Insert       | O(log n)  |
 | Delete       | O(log n)  |
 | Exact search | O(log n)  |
@@ -1743,7 +1743,7 @@ Think of:
 ## 3️⃣ What Operations Does an Index Support?
 
 | Operation    | Time      |
-|  |  |
+| - | - |
 | Insert       | O(log n)  |
 | Delete       | O(log n)  |
 | Exact search | O(log n)  |
@@ -1920,7 +1920,7 @@ You **must know all three**:
 ## Examples (MEMORIZE)
 
 | Problem                  | Greedy? |
-|  | - |
+| - | - |
 | Kruskal’s MST            | ✔       |
 | Prim’s MST               | ✔       |
 | Dijkstra                 | ✔       |
@@ -2038,7 +2038,7 @@ Used when:
 ## Examples (MEMORIZE)
 
 | Problem                      | Technique |
-| - |  |
+| - | - |
 | Fibonacci                    | DP        |
 | Knapsack                     | DP        |
 | Matrix chain                 | DP        |
