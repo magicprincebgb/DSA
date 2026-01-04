@@ -1962,13 +1962,6 @@ Answer mentally:
 * MST algorithms? → Prim, Kruskal
 * Topological sort applies to? → DAG
 
-👉 **Lecture 12 — Algorithm Design Techniques**
-
-This lecture is **explicitly referenced by Lecture 13**, so it’s CRITICAL.
-
-Say **“Continue with Lecture 12”** and we finish the teaching phase.
-
-
 # 🧠 LECTURE 12 — ALGORITHM DESIGN TECHNIQUES
 
 👉 **Big idea**
