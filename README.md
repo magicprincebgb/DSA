@@ -246,18 +246,18 @@ It tells us the **worst-case growth rate**.
 
 | Name         | Complexity |
 | - | - |
-| Constant     | O(1)       |
-| Logarithmic  | O(log n)   |
-| Linear       | O(n)       |
-| Linearithmic | O(n log n) |
-| Quadratic    | O(n²)      |
-| Cubic        | O(n³)      |
-| Exponential  | O(2ⁿ)      |
+| Constant     | Θ(1)       |
+| Logarithmic  | Θ(log n)   |
+| Linear       | Θ(n)       |
+| Linearithmic | Θ(n log n) |
+| Quadratic    | Θ(n²)      |
+| Cubic        | Θ(n³)      |
+| Exponential  | Θ(2ⁿ)      |
 
 👉 **Order from fastest to slowest**:
 
 ```
-O(1) < O(log n) < O(n) < O(n log n) < O(n²) < O(2ⁿ)
+Θ(1) < Θ(log n) < Θ(n) < Θ(n log n) < Θ(n²) < Θ(2ⁿ)
 ```
 
 
@@ -267,7 +267,7 @@ O(1) < O(log n) < O(n) < O(n log n) < O(n²) < O(2ⁿ)
 ### Rule 1: Ignore constants
 
 ```
-O(2n + 5) → O(n)
+Θ(2n + 5) → Θ(n)
 ```
 
 
@@ -275,7 +275,7 @@ O(2n + 5) → O(n)
 ### Rule 2: Ignore smaller terms
 
 ```
-O(n² + n) → O(n²)
+Θ(n² + n) → Θ(n²)
 ```
 
 
@@ -288,7 +288,7 @@ O(n² + n) → O(n²)
 for(i = 0; i < n; i++)
 ```
 
-➡ **O(n)**
+➡ **Θ(n)**
 
 
 
@@ -299,7 +299,7 @@ for(i = 0; i < n; i++)
   for(j = 0; j < n; j++)
 ```
 
-➡ **O(n²)**
+➡ **Θ(n²)**
 
 
 
@@ -310,7 +310,7 @@ for(i = 0; i < n; i++)
   for(j = 0; j < i; j++)
 ```
 
-➡ still **O(n²)**
+➡ still **Θ(n²)**
 
 
 
@@ -321,7 +321,7 @@ for(i = 0; i < n; i++)
 * Each step halves input
 * Number of steps ≈ log₂(n)
 
-👉 **O(log n)**
+👉 **Θ(log n)**
 
 Example:
 
@@ -344,7 +344,7 @@ n = 32 → 5 steps
 T(n) = T(n-1) + c
 ```
 
-➡ **O(n)**
+➡ **Θ(n)**
 
 
 
@@ -354,7 +354,7 @@ T(n) = T(n-1) + c
 F(n) = F(n-1) + F(n-2)
 ```
 
-➡ **O(2ⁿ)** ❌ slow
+➡ **Θ(2ⁿ)** ❌ slow
 
 👉 Why?
 
@@ -374,7 +374,7 @@ for(i = 0; i < n; i++)
   printf("Hello");
 ```
 
-✔ **O(n)**
+✔ **Θ(n)**
 
 
 
@@ -386,7 +386,7 @@ for(i = 0; i < n; i++)
     printf("Hello");
 ```
 
-✔ **O(n²)**
+✔ **Θ(n²)**
 
 
 
@@ -397,7 +397,7 @@ while(n > 1)
   n = n / 2;
 ```
 
-✔ **O(log n)**
+✔ **Θ(log n)**
 
 
 
@@ -409,7 +409,7 @@ for(i = 0; i < n; i++)
     for(k = 0; k < 10; k++)
 ```
 
-✔ **O(n²)**
+✔ **Θ(n²)**
 (10 is constant → ignored)
 
 
@@ -418,12 +418,12 @@ for(i = 0; i < n; i++)
 
 Example:
 
-* Linear search → O(n)
-* Binary search → O(log n)
+* Linear search → Θ(n)
+* Binary search → Θ(log n)
 
 For large n:
 
-* O(log n) is **much faster**
+* Θ(log n) is **much faster**
 * That’s why sorting + binary search is useful
 
 
@@ -446,11 +446,11 @@ Answer in your head:
 * Nested loop → ?
 * Binary search → ?
 * Ignore constants? (Yes/No)
-* O(n² + n)? → ?
+* Θ(n² + n)? → ?
 
 Answers:
 
-> O(n), O(n²), O(log n), Yes, O(n²)
+> Θ(n), Θ(n²), Θ(log n), Yes, Θ(n²)
 
 
 # 📘 LECTURE 4 — Lists & Abstract Data Types (ADT)
@@ -542,13 +542,13 @@ Stored in **continuous memory**
 
 #### Advantages:
 
-* Fast access by index → **O(1)**
+* Fast access by index → **Θ(1)**
 * Simple
 
 #### Disadvantages:
 
 * Fixed size
-* Insert/delete in middle → **O(n)**
+* Insert/delete in middle → **Θ(n)**
 
 
 
@@ -565,11 +565,11 @@ Each node:
 #### Advantages:
 
 * Dynamic size
-* Insert/delete → **O(1)** (if position known)
+* Insert/delete → **Θ(1)** (if position known)
 
 #### Disadvantages:
 
-* Slow access → **O(n)**
+* Slow access → **Θ(n)**
 * Extra memory for pointers
 
 
@@ -579,8 +579,8 @@ Each node:
 | Feature       | Array List | Linked List    |
 | - | - | -- |
 | Memory        | Contiguous | Non-contiguous |
-| Access        | O(1)       | O(n)           |
-| Insert/Delete | O(n)       | O(1)           |
+| Access        | Θ(1)       | Θ(n)           |
+| Insert/Delete | Θ(n)       | Θ(1)           |
 | Size          | Fixed      | Dynamic        |
 | Extra Memory  | No         | Yes (pointers) |
 
@@ -613,7 +613,7 @@ for (moveToStart; currPos < length; next)
   process(currentElement)
 ```
 
-👉 Time complexity: **O(n)**
+👉 Time complexity: **Θ(n)**
 
 
 
@@ -634,7 +634,7 @@ Answer quickly:
 * Does list allow duplicates? → YES
 * Does order matter? → YES
 * Random access in linked list? → NO
-* Insert in array list cost? → O(n)
+* Insert in array list cost? → Θ(n)
 
 
 # 📘 LECTURE 5 — Stacks & Queues
@@ -806,8 +806,8 @@ Dequeue → 10
 
 | Operation | Stack | Queue |
 | - | -- | -- |
-| Insert    | O(1)  | O(1)  |
-| Delete    | O(1)  | O(1)  |
+| Insert    | Θ(1)  | Θ(1)  |
+| Delete    | Θ(1)  | Θ(1)  |
 
 
 
@@ -1016,8 +1016,8 @@ Left → Right → Root
 ### BST Properties
 
 * Inorder traversal → **sorted order**
-* Average search → **O(log n)**
-* Worst case (skewed) → **O(n)**
+* Average search → **Θ(log n)**
+* Worst case (skewed) → **Θ(n)**
 
 
 
@@ -1128,7 +1128,7 @@ After stable sort:
 
 
 
-## 3️⃣ Three Simple Sorting Algorithms (O(n²)) ⭐⭐⭐
+## 3️⃣ Three Simple Sorting Algorithms (Θ(n²)) ⭐⭐⭐
 
 ### 1. Insertion Sort ⭐⭐⭐ (VERY LIKELY CODE)
 
@@ -1153,8 +1153,8 @@ for i = 1 to n-1
 
 #### Time Complexity:
 
-* Best: **O(n)** (already sorted)
-* Avg/Worst: **O(n²)**
+* Best: **Θ(n)** (already sorted)
+* Avg/Worst: **Θ(n²)**
 
 ✔ Stable
 ✔ Simple
@@ -1170,8 +1170,8 @@ for i = 1 to n-1
 
 #### Time Complexity:
 
-* Best: **O(n²)**
-* Worst: **O(n²)**
+* Best: **Θ(n²)**
+* Worst: **Θ(n²)**
 
 ❌ Slow
 ✔ Simple
@@ -1186,7 +1186,7 @@ for i = 1 to n-1
 
 #### Time Complexity:
 
-* Best/Worst: **O(n²)**
+* Best/Worst: **Θ(n²)**
 
 ❌ Not stable
 ✔ Few swaps
@@ -1209,7 +1209,7 @@ Steps:
 
 #### Time Complexity:
 
-* Best/Average/Worst: **O(n log n)**
+* Best/Average/Worst: **Θ(n log n)**
 
 ✔ Stable
 ❌ Extra memory needed
@@ -1226,8 +1226,8 @@ Steps:
 
 #### Time Complexity:
 
-* Average: **O(n log n)**
-* Worst: **O(n²)** (bad pivot)
+* Average: **Θ(n log n)**
+* Worst: **Θ(n²)** (bad pivot)
 
 ✔ Fast in practice
 ❌ Not stable
@@ -1240,11 +1240,11 @@ Steps:
 
 | Algorithm | Best       | Avg        | Worst      | Stable |
 | - | - | - | - | - |
-| Insertion | O(n)       | O(n²)      | O(n²)      | ✔      |
-| Bubble    | O(n²)      | O(n²)      | O(n²)      | ✔      |
-| Selection | O(n²)      | O(n²)      | O(n²)      | ❌      |
-| Merge     | O(n log n) | O(n log n) | O(n log n) | ✔      |
-| Quick     | O(n log n) | O(n log n) | O(n²)      | ❌      |
+| Insertion | Θ(n)       | Θ(n²)      | Θ(n²)      | ✔      |
+| Bubble    | Θ(n²)      | Θ(n²)      | Θ(n²)      | ✔      |
+| Selection | Θ(n²)      | Θ(n²)      | Θ(n²)      | ❌      |
+| Merge     | Θ(n log n) | Θ(n log n) | Θ(n log n) | ✔      |
+| Quick     | Θ(n log n) | Θ(n log n) | Θ(n²)      | ❌      |
 
 
 
@@ -1304,9 +1304,9 @@ mergeSort(A, l, r):
 
 Answer mentally:
 
-* Best case of insertion sort? → O(n)
+* Best case of insertion sort? → Θ(n)
 * Stable fast algorithm? → Merge sort
-* Worst case of quick sort? → O(n²)
+* Worst case of quick sort? → Θ(n²)
 * Sorting used in Project 2? → Quick sort
 
 
@@ -1339,9 +1339,9 @@ Hashing = **direct access** using a hash function.
 
 ### Time Complexity:
 
-* Best case: **O(1)**
-* Worst case: **O(n)**
-* Average case: **O(n)**
+* Best case: **Θ(1)**
+* Worst case: **Θ(n)**
+* Average case: **Θ(n)**
 
 ### Pseudo-code:
 
@@ -1370,7 +1370,7 @@ return -1
 
 ### Time Complexity:
 
-* **O(log n)**
+* **Θ(log n)**
 
 ### Pseudo-code (iterative):
 
@@ -1394,7 +1394,7 @@ while low <= high:
 | Feature         | Linear     | Binary           |
 | - | - | - |
 | Sorted required | ❌          | ✔                |
-| Time            | O(n)       | O(log n)         |
+| Time            | Θ(n)       | Θ(log n)         |
 | Method          | Sequential | Divide & conquer |
 
 
@@ -1430,9 +1430,9 @@ index = key % table_size
 * Direct access
 * Average time complexity:
 
-  * Search: **O(1)**
-  * Insert: **O(1)**
-  * Delete: **O(1)**
+  * Search: **Θ(1)**
+  * Insert: **Θ(1)**
+  * Delete: **Θ(1)**
 
 👉 **Exam question**:
 “Why hashing is faster than searching?”
@@ -1529,8 +1529,8 @@ int binarySearch(int A[], int n, int key) {
 
 Answer mentally:
 
-* Binary search time? → O(log n)
-* Hashing average time? → O(1)
+* Binary search time? → Θ(log n)
+* Hashing average time? → Θ(1)
 * Collision meaning? → Same hash index
 * Chaining uses? → Linked list
 
@@ -1545,7 +1545,7 @@ Indexing and advanced trees solve **searching large data efficiently**, especial
 
 ## 1️⃣ Why Hashing is NOT Enough (EXAM FAVORITE)
 
-Even though hashing is fast (**O(1)** average), it has **limitations**.
+Even though hashing is fast (**Θ(1)** average), it has **limitations**.
 
 ### Limitations of Hashing:
 
@@ -1579,11 +1579,11 @@ Think of:
 
 | Operation    | Time      |
 | - | - |
-| Insert       | O(log n)  |
-| Delete       | O(log n)  |
-| Exact search | O(log n)  |
+| Insert       | Θ(log n)  |
+| Delete       | Θ(log n)  |
+| Exact search | Θ(log n)  |
 | Range search | Efficient |
-| Min / Max    | O(log n)  |
+| Min / Max    | Θ(log n)  |
 
 👉 Indexing is **better than hashing** for many applications.
 
@@ -1608,7 +1608,7 @@ Think of:
 ### Problems with BST:
 
 1. May become **unbalanced**
-2. Height can be **O(n)**
+2. Height can be **Θ(n)**
 3. Too many disk accesses
 
 👉 Disk access is **VERY slow** → we want **short trees**
@@ -1794,7 +1794,7 @@ A → B
 
 #### Cons:
 
-* Uses **O(n²)** memory
+* Uses **Θ(n²)** memory
 
 
 
@@ -1837,7 +1837,7 @@ Traversal = visiting all vertices.
 
 ### Time:
 
-* **O(V + E)**
+* **Θ(V + E)**
 
 👉 Used in:
 
@@ -1860,7 +1860,7 @@ Traversal = visiting all vertices.
 
 ### Time:
 
-* **O(V + E)**
+* **Θ(V + E)**
 
 👉 Used in:
 
@@ -1893,8 +1893,8 @@ Course prerequisite ordering
 
 ### Time:
 
-* O(V²) (simple)
-* O(E log V) (with heap)
+* Θ(V²) (simple)
+* Θ(E log V) (with heap)
 
 👉 **Exam requirement**:
 Explain steps, not code.
@@ -2092,10 +2092,10 @@ Optimal:
 Often:
 
 ```
-T(n) = 2T(n/2) + O(n)
+T(n) = 2T(n/2) + Θ(n)
 ```
 
-➡ **O(n log n)**
+➡ **Θ(n log n)**
 
 
 
@@ -2149,12 +2149,12 @@ Used when:
 
 ### Recursive (BAD):
 
-* O(2ⁿ)
+* Θ(2ⁿ)
 * Repeated work
 
 ### DP (GOOD):
 
-* O(n)
+* Θ(n)
 * Store results
 
 
@@ -2215,7 +2215,7 @@ Teacher said “2 codes” so these two are the most likely because they match o
 ## Coding Q1 (Peak Finding — Project 1 style)
 
 **Problem:** Given an integer array `A` of length `n`, find an index `i` such that `A[i]` is a **peak** (A[i] ≥ neighbors). Return any peak index.
-**Requirement:** O(log n) solution.
+**Requirement:** Θ(log n) solution.
 
 ### Answer (C++ — binary-search peak)
 
@@ -2246,7 +2246,7 @@ int findPeakIndex(const vector<long long>& A) {
 }
 
 int main() {
-    ios::sync_with_stdio(false);
+    ios::sync_with_stdiΘ(false);
     cin.tie(nullptr);
 
     int n;
@@ -2262,7 +2262,7 @@ int main() {
 ```
 
 **Why it works (one line to write in exam):**
-If `A[mid] < A[mid+1]`, slope goes up so a peak exists to the right; else peak exists at mid or left. This halves search each step → **O(log n)**.
+If `A[mid] < A[mid+1]`, slope goes up so a peak exists to the right; else peak exists at mid or left. This halves search each step → **Θ(log n)**.
 
 
 
@@ -2339,7 +2339,7 @@ int main(){
 ```
 
 **One-paragraph exam explanation:**
-Kruskal sorts edges by weight, then scans from smallest to largest, adding an edge only if it connects two different components (checked using DSU). Stop after `V-1` edges. Time: sorting `O(E log E)`.
+Kruskal sorts edges by weight, then scans from smallest to largest, adding an edge only if it connects two different components (checked using DSU). Stop after `V-1` edges. Time: sorting `Θ(E log E)`.
 
 ### What? Oh I see, you must be a Seeker from Quidditch but unfortunately I dont have nothing more to offer you.
 
